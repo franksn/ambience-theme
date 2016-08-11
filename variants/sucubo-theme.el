@@ -1,4 +1,4 @@
-;;; sucubo-theme.el --- A somewhat minimal purplish theme theme.
+;;; sucubo-theme.el --- A somewhat minimal purplish theme.
 
 ;; Created 2016 by Alexander F. Adhyatma
 
@@ -37,7 +37,7 @@
 (unless (>= emacs-major-version 24)
   (error "sucubo requires Emacs 24 or later!"))
 
-(deftheme sucubo "A somewhat minimal purplish theme theme.")
+(deftheme sucubo "A somewhat minimal purplish theme.")
 
 (defgroup sucubo nil
   "sucubo options."
@@ -124,7 +124,7 @@
      `(minibuffer-prompt                         ((,class (:foreground ,prim0 :background ,dark0 :bold nil))))
      `(success                                   ((,class (:foreground ,prim2))))
      `(eval-sexp-fu-flash                        ((,class (:foreground ,light1 :background ,neutral1))))
-     `(eval-sexp-fu-flash-error                  ((,class (:foreground ,light0 :background ,err))))
+     `(eval-sexp-fu-flash-error                  ((,class (:foreground ,dark0 :background ,err))))
 
      ;; Built-in syntax
      `(font-lock-builtin-face                    ((,class (:foreground ,neutral2))))
@@ -285,9 +285,9 @@
      `(flycheck-error                            ((,class (:foreground ,dark0 :background ,err :weight bold :underline t))))
      `(flycheck-error-list-checker-name          ((,class (:foreground ,err))))
      `(flycheck-fringe-error                     ((,class (:foreground ,err :weight bold))))
-     `(flycheck-fringe-ylwo           ((,class (:foreground ,prim0 :weight bold))))
+     `(flycheck-fringe-info           ((,class (:foreground ,prim0 :weight bold))))
      `(flycheck-fringe-warning                   ((,class (:foreground ,warn :weight bold))))
-     `(flycheck-ylwo                  ((,class (:foreground ,light0 :background ,neutral2 :weight bold :underline t))))
+     `(flycheck-info                  ((,class (:foreground ,light0 :background ,neutral2 :weight bold :underline t))))
      `(flycheck-warning                          ((,class (:foreground ,dark0 :background ,warn :weight bold :underline t))))
 
 
@@ -308,7 +308,7 @@
      `(helm-bookmark-directory                   ((,class (:foreground ,neutral2))))
      `(helm-bookmark-file                        ((,class (:foreground ,prim0))))
      `(helm-bookmark-gnus                        ((,class (:foreground ,neutral2))))
-     `(helm-bookmark-ylwo                        ((,class (:foreground ,neutral2))))
+     `(helm-bookmark-info                        ((,class (:foreground ,neutral2))))
      `(helm-bookmark-man                         ((,class (:foreground ,prim0))))
      `(helm-bookmark-w3m                         ((,class (:foreground ,neutral1))))
      `(helm-buffer-directory                     ((,class (:foreground ,light0 :background ,prim0))))
@@ -318,6 +318,7 @@
      `(helm-buffer-saved-out                     ((,class (:foreground ,neutral0))))
      `(helm-buffer-size                          ((,class (:foreground ,neutral2))))
      `(helm-candidate-number                     ((,class (:foreground ,prim2))))
+     `(helm-ff-dotted-directory                  ((,class (:foreground ,dark3))))
      `(helm-ff-directory                         ((,class (:foreground ,neutral0))))
      `(helm-ff-executable                        ((,class (:foreground ,neutral2))))
      `(helm-ff-file                              ((,class (:foreground ,prim0))))
@@ -333,9 +334,9 @@
      `(helm-header                               ((,class (:foreground ,prim1))))
      `(helm-header-line-left-margin              ((,class (:foreground ,prim0))))
      `(helm-helper                               ((,class (:foreground ,prim1))))
-     `(helm-history-deleted                      ((,class (:foreground ,dark2 :background ,neutral0))))
+     `(helm-history-deleted                      ((,class (:foreground ,light2 :background ,neutral0))))
      `(helm-history-remote                       ((,class (:foreground ,light2))))
-     `(helm-lisp-completion-ylwo                 ((,class (:foreground ,neutral1))))
+     `(helm-lisp-completion-info                 ((,class (:foreground ,neutral1))))
      `(helm-lisp-show-completion                 ((,class (:foreground ,neutral0))))
      `(helm-locate-finish                        ((,class (:foreground ,light0 :background ,neutral1))))
      `(helm-match                                ((,class (:foreground ,neutral1))))
@@ -501,7 +502,7 @@
      `(highlight                                 ((,class (:foreground ,light0 :background ,neutral1))))
      `(match                                     ((,class (:foreground ,light0 :background ,dark2))))
      `(isearch                                   ((,class (:foreground ,light0 :background ,prim2))))
-     `(isearch-fail                              ((,class (:foreground ,light0 :background ,err))))
+     `(isearch-fail                              ((,class (:foreground ,dark0 :background ,err))))
      `(show-paren-match                          ((,class (:foreground ,light0 :background ,prim2))))
      `(show-paren-mismatch                       ((,class (:foreground ,light0 :background ,err))))
      `(anzu-mode-line                            ((,class (:foreground ,light0 :height 100 :background ,neutral1))))

@@ -1,4 +1,4 @@
-;;; jadoroso-theme.el --- Colors to match your Gyokuro green tea.
+;;; jadoroso-theme.el --- Colors to match your Gyokuro tea.
 
 ;; Created 2016 by Alexander F. Adhyatma
 
@@ -37,7 +37,7 @@
 (unless (>= emacs-major-version 24)
   (error "jadoroso requires Emacs 24 or later!"))
 
-(deftheme jadoroso "Colors to match your Gyokuro green tea.")
+(deftheme jadoroso "Colors to match your Gyokuro tea.")
 
 (defgroup jadoroso nil
   "jadoroso options."
@@ -112,8 +112,8 @@
      `(fringe                                    ((,class (:background ,dark1))))
      `(linum                                     ((,class (:foreground ,medium :background ,dark1))))
      `(hl-line                                   ((,class (:background ,dark1))))
-     `(region                                    ((,class (:background ,neutral0 :distant-foreground ,light0))))
-     `(secondary-selection                       ((,class (:background ,neutral0 :foreground ,light0))))
+     `(region                                    ((,class (:background ,dark1 :distant-foreground ,light0))))
+     `(secondary-selection                       ((,class (:background ,neutral0 :foreground ,dark0))))
      `(cua-rectangle                             ((,class (:background ,neutral0))))
      `(header-line                               ((,class (:foreground ,neutral0 :background ,dark0 :bold nil))))
      `(minibuffer-prompt                         ((,class (:foreground ,prim0 :background ,dark0 :bold nil))))
@@ -280,9 +280,9 @@
      `(flycheck-error                            ((,class (:foreground ,dark0 :background ,err :weight bold :underline t))))
      `(flycheck-error-list-checker-name          ((,class (:foreground ,err))))
      `(flycheck-fringe-error                     ((,class (:foreground ,err :weight bold))))
-     `(flycheck-fringe-ylwo           ((,class (:foreground ,prim0 :weight bold))))
+     `(flycheck-fringe-info                      ((,class (:foreground ,prim0 :weight bold))))
      `(flycheck-fringe-warning                   ((,class (:foreground ,warn :weight bold))))
-     `(flycheck-ylwo                  ((,class (:foreground ,dark0 :background ,neutral0 :weight bold :underline t))))
+     `(flycheck-info                             ((,class (:foreground ,dark0 :background ,neutral0 :weight bold :underline t))))
      `(flycheck-warning                          ((,class (:foreground ,dark0 :background ,warn :weight bold :underline t))))
 
 
@@ -303,7 +303,7 @@
      `(helm-bookmark-directory                   ((,class (:foreground ,neutral0))))
      `(helm-bookmark-file                        ((,class (:foreground ,prim0))))
      `(helm-bookmark-gnus                        ((,class (:foreground ,neutral0))))
-     `(helm-bookmark-ylwo                        ((,class (:foreground ,neutral0))))
+     `(helm-bookmark-info                        ((,class (:foreground ,neutral0))))
      `(helm-bookmark-man                         ((,class (:foreground ,prim0))))
      `(helm-bookmark-w3m                         ((,class (:foreground ,neutral0))))
      `(helm-buffer-directory                     ((,class (:foreground ,dark0 :background ,prim0))))
@@ -313,12 +313,13 @@
      `(helm-buffer-saved-out                     ((,class (:foreground ,neutral0))))
      `(helm-buffer-size                          ((,class (:foreground ,neutral0))))
      `(helm-candidate-number                     ((,class (:foreground ,prim2))))
+     `(helm-dotted-directory                     ((,class (:foreground ,dark1 :background ,prim2))))
      `(helm-ff-directory                         ((,class (:foreground ,neutral0))))
      `(helm-ff-executable                        ((,class (:foreground ,neutral0))))
      `(helm-ff-file                              ((,class (:foreground ,prim0))))
      `(helm-ff-invalid-symlink                   ((,class (:foreground ,light0 :background ,warn))))
      `(helm-ff-prefix                            ((,class (:foreground ,dark0 :background ,prim1))))
-     `(helm-ff-symlink                           ((,class (:foreground ,dark1))))
+     `(helm-ff-symlink                           ((,class (:foreground ,neutral0))))
      `(helm-grep-cmd-line                        ((,class (:foreground ,prim2))))
      `(helm-grep-file                            ((,class (:foreground ,prim1))))
      `(helm-grep-finish                          ((,class (:foreground ,neutral0))))
@@ -330,7 +331,7 @@
      `(helm-helper                               ((,class (:foreground ,prim1))))
      `(helm-history-deleted                      ((,class (:foreground ,dark0 :background ,err))))
      `(helm-history-remote                       ((,class (:foreground ,medium))))
-     `(helm-lisp-completion-ylwo                 ((,class (:foreground ,neutral0))))
+     `(helm-lisp-completion-info                 ((,class (:foreground ,neutral0))))
      `(helm-lisp-show-completion                 ((,class (:foreground ,neutral0))))
      `(helm-locate-finish                        ((,class (:foreground ,dark0 :background ,neutral0))))
      `(helm-match                                ((,class (:foreground ,neutral0))))
@@ -492,8 +493,8 @@
      `(magit-bisect-skip                         ((,class (:foreground ,medium))))
 
      ;; Matches and Isearch
-     `(lazy-highlight                            ((,class (:foreground ,dark0 :background ,dark2))))
-     `(highlight                                 ((,class (:foreground ,dark0 :background ,neutral0))))
+     `(lazy-highlight                            ((,class (:foreground ,light0 :background ,dark1))))
+     `(highlight                                 ((,class (:foreground ,light0 :background ,dark1))))
      `(match                                     ((,class (:foreground ,dark0 :background ,dark2))))
      `(isearch                                   ((,class (:foreground ,dark0 :background ,prim2))))
      `(isearch-fail                              ((,class (:foreground ,dark0 :background ,err))))
@@ -511,6 +512,10 @@
      `(mingus-artist-face                        ((,class (:foreground ,neutral0))))
      `(mingus-album-face                         ((,class (:foreground ,neutral0))))
      `(mingus-album-stale-face                   ((,class (:foreground ,neutral0))))
+
+     ;; mu4e
+     `(mu4e-region-code                          ((,class (:foreground ,light1))))
+     `(mu4e-header-highlight-face                ((,class (:foreground ,dark0 :background ,light0))))
 
      ;; Neotree
      `(neo-dir-link-face                         ((,class (:foreground ,prim0 :weight bold))))
@@ -630,11 +635,11 @@
      `(sp-wrap-overlay-opening-pair              ((,class (:foreground ,prim1 :bold t))))
 
      ;;Smerge
-     `(smerge-mine                               ((,class (:background ,neutral0 :foreground ,light0))))
-     `(smerge-other                              ((,class (:background ,neutral0 :foreground ,light1))))
+     `(smerge-mine                               ((,class (:background ,neutral0 :foreground ,dark0))))
+     `(smerge-other                              ((,class (:background ,neutral0 :foreground ,dark1))))
      `(smerge-markers                            ((,class (:background ,dark0 :foreground ,light1))))
-     `(smerge-refined-added                      ((,class (:background ,prim2 :foreground ,light1))))
-     `(smerge-refined-removed                    ((,class (:background ,neutral0 :foreground ,light1))))
+     `(smerge-refined-added                      ((,class (:background ,prim2 :foreground ,dark1))))
+     `(smerge-refined-removed                    ((,class (:background ,neutral0 :foreground ,dark0))))
 
      ;; swiper
      `(swiper-line-face                          ((,class (:background ,dark1))))
