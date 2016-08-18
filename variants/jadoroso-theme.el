@@ -108,6 +108,10 @@
      `(link-visited                              ((,class (:foreground ,neutral0 :underline t))))
      `(mode-line                                 ((,class (:foreground ,light1 :background ,dark0 :box nil))))
      `(mode-line-inactive                        ((,class (:foreground ,dark0 :background ,dark2 :box nil))))
+     `(mode-line                                 ((,class (:foreground ,dark0 :background ,prim2 :height 0.9
+                                                                       :box (:line-width 3 :color ,prim2)))))
+     `(mode-line-inactive                        ((,class (:foreground ,light1 :height 0.9 :background ,dark2 :height 0.9
+                                                                       :box (:line-width 3 :color ,dark2)))))
      `(mode-line-buffer-id                       ((,class (:bold t :foreground ,prim0))))
      `(fringe                                    ((,class (:background ,dark1))))
      `(linum                                     ((,class (:foreground ,medium :background ,dark1))))
@@ -501,6 +505,15 @@
      `(show-paren-match                          ((,class (:foreground ,dark0 :background ,prim2))))
      `(show-paren-mismatch                       ((,class (:foreground ,dark0 :background ,err))))
      `(anzu-mode-line                            ((,class (:foreground ,dark0 :height 100 :background ,neutral0))))
+
+     ;; Message faces
+     `(message-header-name                       ((,class (:foreground ,prim2))))
+     `(message-header-cc                         ((,class (:foreground ,prim1))))
+     `(message-header-other                      ((,class (:foreground ,neutral0))))
+     `(message-header-subject                    ((,class (:foreground ,neutral1))))
+     `(message-header-to                         ((,class (:foreground ,prim0))))
+     `(message-cited-text                        ((,class (:inherit font-lock-comment-face))))
+     `(message-separator                         ((,class (:foreground ,neutral1))))
 
 ;;;;; mingus
      `(mingus-directory-face                     ((,class (:foreground ,neutral0))))

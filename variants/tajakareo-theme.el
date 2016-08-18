@@ -76,16 +76,16 @@
 (let* (;; variable pitch
        (tajakareo-pitch (if tajakareo-variable-pitch 'variable-pitch 'default))
        (class '((class color) (min-colors 257)))
-       (dark0          "#141212")
-       (dark1          "#1F1C1C")
-       (dark2          "#3A3A3A")
+       (dark0          "#211E1E")
+       (dark1          "#292525")
+       (dark2          "#3C3C3C")
        (dark3          "#4A4A4A")
 
        (medium         "#6B6864")
 
-       (light0         "#CCC4BE")
-       (light1         "#A8A29D")
-       (light2         "#999999")
+       (light0         "#B0A9A4")
+       (light1         "#96918D")
+       (light2         "#888888")
 
        (neutral0       "#666666")
        (neutral1       "#555555")
@@ -111,8 +111,10 @@
      `(cursor                                    ((,class (:background ,light1 :inverse-video t))))
      `(link                                      ((,class (:foreground ,prim1 :underline t))))
      `(link-visited                              ((,class (:foreground ,neutral0 :underline t))))
-     `(mode-line                                 ((,class (:foreground ,light1 :background ,dark0 :box nil))))
-     `(mode-line-inactive                        ((,class (:foreground ,medium :background ,dark2 :box nil))))
+     `(mode-line                                 ((,class (:foreground ,dark0 :background ,neutral1 :height 0.9
+                                                                       :box (:line-width 3 :color ,neutral1)))))
+     `(mode-line-inactive                        ((,class (:foreground ,light2 :height 0.9 :background ,dark2 :height 0.9
+                                                                       :box (:line-width 3 :color ,dark2)))))
      `(mode-line-buffer-id                       ((,class (:bold t :foreground ,prim0))))
      `(fringe                                    ((,class (:background ,dark0))))
      `(linum                                     ((,class (:foreground ,medium :background ,dark0))))
@@ -506,6 +508,15 @@
      `(show-paren-match                          ((,class (:foreground ,light0 :background ,prim2))))
      `(show-paren-mismatch                       ((,class (:foreground ,light0 :background ,err))))
      `(anzu-mode-line                            ((,class (:foreground ,light0 :height 100 :background ,neutral1))))
+
+     ;; Message faces
+     `(message-header-name                       ((,class (:foreground ,prim2))))
+     `(message-header-cc                         ((,class (:foreground ,prim1))))
+     `(message-header-other                      ((,class (:foreground ,neutral0))))
+     `(message-header-subject                    ((,class (:foreground ,neutral1))))
+     `(message-header-to                         ((,class (:foreground ,prim0))))
+     `(message-cited-text                        ((,class (:inherit font-lock-comment-face))))
+     `(message-separator                         ((,class (:foreground ,neutral1))))
 
 ;;;;; mingus
      `(mingus-directory-face                     ((,class (:foreground ,neutral2))))

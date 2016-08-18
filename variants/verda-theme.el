@@ -76,23 +76,23 @@
 (let* (;; variable pitch
        (verda-pitch (if verda-variable-pitch 'variable-pitch 'default))
        (class '((class color) (min-colors 257)))
-       (dark0          "#060F0F")
-       (dark1          "#0A1A1A")
+       (dark0          "#0B1717")
+       (dark1          "#0F1F1F")
        (dark2          "#244242")
        (dark3          "#2E5454")
 
        (medium         "#405E5E")
 
-       (light0         "#BECCCA")
-       (light1         "#ABB8B6")
+       (light0         "#A4B3B0")
+       (light1         "#9DABA8")
        (light2         "#96BCB3")
 
        (neutral0       "#4D807A")
        (neutral1       "#456969")
        (neutral2       "#52706D")
 
-       (prim0          "#A4E0D1")
-       (prim1          "#80CCAA")
+       (prim0          "#9BD4C5")
+       (prim1          "#7AC2A2")
        (prim2          "#3B948B")
 
        (delim0         "#4EAEBB")
@@ -111,8 +111,10 @@
      `(cursor                                    ((,class (:background ,light1 :inverse-video t))))
      `(link                                      ((,class (:foreground ,prim1 :underline t))))
      `(link-visited                              ((,class (:foreground ,neutral0 :underline t))))
-     `(mode-line                                 ((,class (:foreground ,light1 :background ,dark0 :box nil))))
-     `(mode-line-inactive                        ((,class (:foreground ,medium :background ,dark2 :box nil))))
+     `(mode-line                                 ((,class (:foreground ,dark0 :background ,neutral0 :height 0.9
+                                                                       :box (:line-width 3 :color ,neutral0)))))
+     `(mode-line-inactive                        ((,class (:foreground ,light2 :height 0.9 :background ,dark2 :height 0.9
+                                                                       :box (:line-width 3 :color ,dark2)))))
      `(mode-line-buffer-id                       ((,class (:bold t :foreground ,prim0))))
      `(fringe                                    ((,class (:background ,dark0))))
      `(linum                                     ((,class (:foreground ,medium :background ,dark0))))
@@ -129,7 +131,7 @@
      ;; Built-in syntax
      `(font-lock-builtin-face                    ((,class (:foreground ,neutral2))))
      `(font-lock-constant-face                   ((,class (:foreground ,neutral0))))
-     `(font-lock-comment-face                    ((,class (:foreground ,medium :background ,dark0))))
+     `(font-lock-comment-face                    ((,class (:foreground ,medium :background ,dark0 :slant italic))))
      `(font-lock-doc-face                        ((,class (:inherit font-lock-comment-face))))
      `(font-lock-doc-string-face                 ((,class (:inherit font-lock-comment-face))))
      `(font-lock-function-name-face              ((,class (:foreground ,prim0))))
@@ -507,6 +509,15 @@
      `(show-paren-mismatch                       ((,class (:foreground ,light0 :background ,err))))
      `(anzu-mode-line                            ((,class (:foreground ,light0 :height 100 :background ,neutral1))))
 
+     ;; Message faces
+     `(message-header-name                       ((,class (:foreground ,prim2))))
+     `(message-header-cc                         ((,class (:foreground ,prim1))))
+     `(message-header-other                      ((,class (:foreground ,neutral0))))
+     `(message-header-subject                    ((,class (:foreground ,neutral1))))
+     `(message-header-to                         ((,class (:foreground ,prim0))))
+     `(message-cited-text                        ((,class (:inherit font-lock-comment-face))))
+     `(message-separator                         ((,class (:foreground ,neutral1))))
+
 ;;;;; mingus
      `(mingus-directory-face                     ((,class (:foreground ,neutral2))))
      `(mingus-pausing-face                       ((,class (:foreground ,prim1))))
@@ -570,9 +581,9 @@
      `(popup-tip-face                            ((,class (:foreground ,light0 :background ,prim0))))
 
      ;; Powerline
-     `(powerline-active1                         ((,class (:background ,dark1 :inherit mode-line))))
-     `(powerline-active2                         ((,class (:background ,dark2 :inherit mode-line))))
-     `(powerline-inactive1                       ((,class (:background ,dark1 :inherit mode-line-inactive))))
+     `(powerline-active1                         ((,class (:background ,prim2 :inherit mode-line))))
+     `(powerline-active2                         ((,class (:background ,prim2 :inherit mode-line))))
+     `(powerline-inactive1                       ((,class (:background ,dark2 :inherit mode-line-inactive))))
      `(powerline-inactive2                       ((,class (:background ,dark3 :inherit mode-line-inactive))))
 
      ;; Rainbow-Blocks
